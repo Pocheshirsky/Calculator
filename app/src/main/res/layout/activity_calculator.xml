@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="32dp"
+    android:orientation="vertical"
+    tools:context=".CalculatorActivity">
+
+    <LinearLayout
+        android:id="@+id/numberAContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Число А:"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/numberA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="0.0"
+            android:textSize="24sp"
+            android:onClick="numberAIsFocused"
+            android:inputType="number|numberDecimal" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/numberBContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/numberAContainer">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Число Б:"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/numberB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="0.0"
+            android:textSize="24sp"
+            android:onClick="numberBIsFocused"
+            android:inputType="number|numberDecimal" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/firstButtonsPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/numberBContainer">
+
+        <Button
+            android:id="@+id/plusButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="А + Б"
+            android:layout_weight="1"
+            android:layout_marginRight="8dp"
+            android:textSize="16sp"
+            android:onClick="add"/>
+
+        <Button
+            android:id="@+id/multiplicationButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="А * Б"
+            android:layout_weight="1"
+            android:layout_marginRight="8dp"
+            android:textSize="16sp"
+            android:onClick="multiply"/>
+        <Button
+            android:id="@+id/powButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="А ^ Б"
+            android:layout_weight="1"
+            android:layout_marginRight="8dp"
+            android:textSize="16sp"
+            android:onClick="pow"/>
+        <Button
+            android:id="@+id/cButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="С"
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:onClick="clean"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/secondButtonsPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/firstButtonsPanel">
+
+        <Button
+            android:id="@+id/substractionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="А - Б"
+            android:layout_weight="1"
+            android:layout_marginRight="8dp"
+            android:textSize="16sp"
+            android:onClick="substract"/>
+
+        <Button
+            android:id="@+id/divisionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="А / Б"
+            android:layout_weight="1"
+            android:layout_marginRight="8dp"
+            android:textSize="16sp"
+            android:onClick="divide"/>
+        <Button
+            android:id="@+id/piButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pi"
+            android:layout_weight="1"
+            android:layout_marginRight="8dp"
+            android:textSize="16sp"
+            android:onClick="insertPiNumber"/>
+        <Button
+            android:id="@+id/ceButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="СE"
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:onClick="cleanEntry"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/thirdButtonsPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/secondButtonsPanel">
+
+        <Button
+            android:id="@+id/remainderButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="%"
+            android:layout_weight="1"
+            android:layout_marginRight="8dp"
+            android:textSize="16sp"
+            android:onClick="takeRemainder"/>
+
+        <Button
+            android:id="@+id/mButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MS"
+            android:layout_weight="1"
+            android:layout_marginRight="8dp"
+            android:textSize="16sp"
+            android:onClick="saveMemory"/>
+        <Button
+            android:id="@+id/mrButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MR"
+            android:layout_weight="1"
+            android:layout_marginRight="8dp"
+            android:textSize="16sp"
+            android:onClick="readMemory"/>
+        <Button
+            android:id="@+id/mcButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MС"
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:onClick="cleanMemory"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/resultContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/thirdButtonsPanel">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Результат:"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/resultField"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:hint="0.0"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="backToMain"
+        android:text="Назад"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

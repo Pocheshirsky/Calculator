@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="32dp"
+    android:orientation="vertical"
+    tools:context=".CalculatorActivity">
+
+    <LinearLayout
+        android:id="@+id/numberAContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/numberAEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Число А:"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/numberA"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:hint="0.0"
+                android:textSize="24sp"
+                android:onClick="numberAIsFocused"
+                android:inputType="number|numberDecimal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/plusMultiplyPowPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@id/numberAContainer">
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/numberBContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/numberAContainer">
+
+        <LinearLayout
+            android:id="@+id/numberBEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/numberAContainer">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Число Б:"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/numberB"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:hint="0.0"
+                android:inputType="number|numberDecimal"
+                android:onClick="numberBIsFocused"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/clearSubstractDivPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/numberAContainer">
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/buttonsPanel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/numberAContainer"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/numberAContainer">
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/plusButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:onClick="add"
+                android:text="А + Б"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/multiplicationButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:onClick="multiply"
+                android:text="А * Б"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/powButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:onClick="pow"
+                android:text="А ^ Б"
+                android:textSize="16sp" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/cButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:onClick="clean"
+                android:text="С"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/substractionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:onClick="substract"
+                android:text="А - Б"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/divisionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:onClick="divide"
+                android:text="А / Б"
+                android:textSize="16sp" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/piButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:onClick="insertPiNumber"
+                android:text="Pi"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="@id/cButton"/>
+
+            <Button
+                android:id="@+id/ceButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:onClick="cleanEntry"
+                android:text="СE"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/remainderButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:onClick="takeRemainder"
+                android:text="%"
+                android:textSize="16sp" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/mButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MS"
+                android:layout_weight="1"
+                android:layout_marginRight="8dp"
+                android:textSize="16sp"
+                android:onClick="saveMemory"/>
+            <Button
+                android:id="@+id/mrButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MR"
+                android:layout_weight="1"
+                android:layout_marginRight="8dp"
+                android:textSize="16sp"
+                android:onClick="readMemory"/>
+            <Button
+                android:id="@+id/mcButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MС"
+                android:layout_weight="1"
+                android:layout_marginRight="8dp"
+                android:textSize="16sp"
+                android:onClick="cleanMemory"/>
+
+        </TableRow>
+
+    </TableLayout>
+
+    <LinearLayout
+        android:id="@+id/resultContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonsPanel">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Результат:"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/resultField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:hint="0.0"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="backToMain"
+        android:text="Назад"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
