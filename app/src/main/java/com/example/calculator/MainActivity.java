@@ -51,6 +51,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, CalculatorActivity.class);
         startActivity(intent);
     }
+
+    public void openChart(View view) {
+        Intent intent = new Intent(this, ChartActivity.class);
+        startActivity(intent);
+    }
 }
 
 
